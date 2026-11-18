@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RFP Reader | ZASDC-KZN Translation System</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<header>
+<h1>ZASDC-KZN Translation System</h1>
+<nav aria-label="Main">
+<a href="index.html">Home</a>
+<a href="reader.html" aria-current="page">RFP Reader</a>
+<a href="dictionary.html">Dictionary</a>
+</nav>
+</header>
+<main id="main">
+<h1>RFP Reader</h1>
+<h2>Welcome to ZASDC-KZN AI Translation System</h2>
+<p>Paste English text or upload a file, choose a language layout, and compare the translation with the original.</p>
+
+<form id="translate-form" class="card">
+  <label for="language-mode">Language layout</label>
+  <select id="language-mode">
+    <option value="en-zu">English + isiZulu</option>
+    <option value="en-af">English + Afrikaans</option>
+    <option value="zu-af">isiZulu + Afrikaans</option>
+    <option value="all">English + isiZulu + Afrikaans</option>
+    <option value="zu">isiZulu only</option>
+    <option value="af">Afrikaans only</option>
+    <option value="en">English only</option>
+  </select>
+
+  <label for="source-text">Paste English text</label>
+  <textarea id="source-text" rows="7" placeholder="Paste the RFP text here..."></textarea>
+
+  <label for="file-input">Or upload a TXT, PDF or DOCX file (up to 5 MB)</label>
+  <input type="file" id="file-input" accept=".txt,.pdf,.docx">
+
+  <button class="button" type="submit" id="translate-btn">Translate</button>
+</form>
+
+<p id="translate-error" class="error" role="alert"></p>
+<div id="results" aria-live="polite"></div>
+
+<p class="notice">Machine translation is a learning aid. The official competition RFP is always the source of truth.</p>
+<p class="status" id="api-status" role="status"></p>
+</main>
+<footer><p>The official competition RFP is always the source of truth. Translations are a learning aid only.</p></footer>
+<script src="js/app.js"></script>
+<script src="js/reader.js"></script>
+</body>
+</html>

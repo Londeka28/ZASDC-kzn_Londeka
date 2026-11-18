@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dictionary | ZASDC-KZN Translation System</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<header>
+<h1>ZASDC-KZN Translation System</h1>
+<nav aria-label="Main">
+<a href="index.html">Home</a>
+<a href="reader.html">RFP Reader</a>
+<a href="dictionary.html" aria-current="page">Dictionary</a>
+</nav>
+</header>
+<main id="main">
+<h2>Space and astronomy dictionary</h2>
+
+<div class="card">
+  <label for="dict-search">Search the dictionary</label>
+  <input id="dict-search" type="search" placeholder="Type any word in English, isiZulu or Afrikaans...">
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>English</th><th>isiZulu</th><th>Afrikaans</th><th>Status</th></tr></thead>
+      <tbody id="dict-body"></tbody>
+    </table>
+  </div>
+  <p id="dict-empty" class="status" hidden>No matching terms found.</p>
+</div>
+
+<h2>Look up a term</h2>
+<form id="dict-form" class="card">
+  <label for="dict-term">Term</label>
+  <input id="dict-term" type="text" placeholder="e.g. Moon" required>
+  <div class="row">
+    <div>
+      <label for="dict-from">From</label>
+      <select id="dict-from">
+        <option value="english">English</option>
+        <option value="isizulu">isiZulu</option>
+        <option value="afrikaans">Afrikaans</option>
+      </select>
+    </div>
+    <div>
+      <label for="dict-to">To</label>
+      <select id="dict-to">
+        <option value="isizulu">isiZulu</option>
+        <option value="english">English</option>
+        <option value="afrikaans">Afrikaans</option>
+      </select>
+    </div>
+  </div>
+  <button class="button" type="submit">Look up</button>
+  <p id="dict-result" class="output" role="status"></p>
+</form>
+
+<h2>Glossary: replace terms in a text</h2>
+<form id="glossary-form" class="card">
+  <label for="glossary-input">Text</label>
+  <textarea id="glossary-input" rows="4" placeholder="e.g. The Moon and the Sun"></textarea>
+  <div class="row">
+    <div>
+      <label for="glossary-from">From</label>
+      <select id="glossary-from">
+        <option value="english">English</option>
+        <option value="isizulu">isiZulu</option>
+        <option value="afrikaans">Afrikaans</option>
+      </select>
+    </div>
+    <div>
+      <label for="glossary-to">To</label>
+      <select id="glossary-to">
+        <option value="isizulu">isiZulu</option>
+        <option value="english">English</option>
+        <option value="afrikaans">Afrikaans</option>
+      </select>
+    </div>
+  </div>
+  <button class="button" type="submit">Apply glossary</button>
+  <p id="glossary-output" class="output" role="status"></p>
+</form>
+
+<p class="status" id="api-status" role="status"></p>
+</main>
+<footer><p>The official competition RFP is always the source of truth. Translations are a learning aid only.</p></footer>
+<script src="js/app.js"></script>
+<script type="module" src="js/dictionary.js"></script>
+</body>
+</html>
